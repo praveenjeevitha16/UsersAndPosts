@@ -2,17 +2,18 @@
 Users and posts
 
 # Prerequisites
-Node JS
-Git
+1. Node JS
+2. Git
+3. Angular cli (npm install @angular/cli -g)
 
 # Steps to setup
 1. Download or Clone this project
-2. Go to UsersAndPosts folder
+2. Go to UsersAndPosts/UsersAndPosts folder
 3. npm install
 
 # Setps to Run the project
-1. Go to UsersAndPosts in command prompt
-2. Use command ng server or npm run start
+1. Go to UsersAndPosts/UsersAndPosts in command prompt
+2. Use command ng serve or npm run start
 3. Go to http://localhost:4200/
 
 # Build
