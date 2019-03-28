@@ -1,0 +1,7 @@
+.alertClass {
+	position: fixed;
+    right: 40em;
+    width: 15%;
+    z-index: 9999;
+    top: 7em;
+}

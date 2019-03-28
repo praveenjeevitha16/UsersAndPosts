@@ -1,0 +1,21 @@
+<mat-table [dataSource]="dataSource">
+	<ng-container [matColumnDef]="col.columnId" *ngFor="let col of columns">
+	    <div *ngIf="col.propertyName!=='name'">
+		    <mat-header-cell *matHeaderCellDef> {{ col.columnId }} </mat-header-cell>
+		    <mat-cell *matCellDef="let element"> {{ element[col.propertyName] }} </mat-cell>
+  	    </div>
+  	     <div *ngIf="col.propertyName ==='name'">
+            <mat-header-cell *matHeaderCellDef> {{ col.columnId }} </mat-header-cell>
+            <mat-cell *matCellDef="let element" >
+                 <a routerLink="/users/{{element.id}}" (click)=displayUserDetails(element)>{{ element[col.propertyName] }}</a> 
+            </mat-cell>
+        </div>
+    </ng-container>
+    <!-- <ng-container matColumnDef="expandedDetail">
+      <mat-cell *matCellDef="let detail"> 
+        The symbol for {{detail.element.name}} is {{detail.element.symbol}}
+      </mat-cell>
+    </ng-container> -->
+    <mat-header-row *matHeaderRowDef="columnIds"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnIds;"></mat-row>
+</mat-table>

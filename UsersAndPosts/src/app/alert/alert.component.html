@@ -1,0 +1,5 @@
+<div class="alertClass" *ngIf="alertConfig && alertConfig.showAlertMessage">
+  <alert [type]="alertConfig.type" [dismissOnTimeout]="alertConfig.timeout">
+  	{{ alertConfig.msg }}
+  </alert>
+</div>

@@ -1,0 +1,35 @@
+<div id="contact" class="container" *ngIf="user">
+  <div class="row">
+    <h1 class="text-center">User Details</h1>
+  </div>
+  <div class="row">
+  	<div class="col-md-4"><h3>Contact Details</h3></div>
+    <div class="col-md-6">
+      <p>{{user.name}}</p>
+      <p>{{user.username}}</p>
+      <p>{{user.email}}</p>
+      <p>{{user.phone}}</p>
+      <p><a href="{{user.website}}" target="_blank">{{user.website}}</a></p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="col-md-4"><h3>Address</h3></div>
+    <div class="col-md-6">
+      <p>{{user.address.street}}, {{user.address.suite}}</p>
+      <p>{{user.address.city}}</p>
+      <p>{{user.address.zipcode}}</p>
+      <p>{{user.address.street}}</p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="col-md-4"><h3>Company</h3></div>
+    <div class="col-md-6">
+      <h3>{{user.company.name}}</h3>
+      <p>{{user.company.catchPhrase}}</p>
+      <p>{{user.company.bs}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" routerLink="/users">Back to users</button>
+  </div>
+</div>

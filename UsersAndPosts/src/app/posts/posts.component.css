@@ -1,0 +1,9 @@
+.postsTable {
+    height: 18%;
+    overflow: auto;
+    width: 100%;
+}
+
+.pd-top {
+	padding: 1em;
+}

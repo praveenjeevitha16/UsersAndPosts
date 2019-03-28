@@ -1,0 +1,43 @@
+
+<app-alert [alertConfig]="alertConfig"></app-alert>
+<div class="pd-top">
+	<div class="row">
+		<div class="col-md-12 col-lg-12">
+			<button mat-button class="btn btn-primary" (click)='createPost()'>Create Post</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-lg-12" *ngIf="posts">
+			<mat-table class="postsTable" [dataSource]="posts">
+				<ng-container [matColumnDef]="col.columnId" *ngFor="let col of columns">
+				    <mat-header-cell *matHeaderCellDef> {{ col.columnId }} </mat-header-cell>
+				    <mat-cell *matCellDef="let element"> {{ element[col.propertyName] }} </mat-cell>
+			    </ng-container>
+			    <mat-header-row *matHeaderRowDef="columnIds"></mat-header-row>
+			    <mat-row *matRowDef="let row; columns: columnIds;"></mat-row>
+			</mat-table>
+		</div>
+	</div>
+</div>
+
+
+<ng-template #createPostDialog>
+	<h2>Create Post</h2>
+	<mat-dialog-content>		
+		<div [formGroup]="postForm">
+			<div class="row"> 
+				<mat-form-field class="w-100" floatPlaceholder="never">
+					Title: <input matInput type="text" maxlength="24" required formControlName="title">
+				</mat-form-field>
+			</div>
+			<div class="row"> 			
+				<mat-form-field class="w-100" floatPlaceholder="never">
+					Body: <textarea matInput maxlength="50" required formControlName="body"></textarea>
+				</mat-form-field>	
+			</div>
+		</div>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+		<button mat-button class="btn btn-primary" (click)="postSubmit()">Submit</button>
+	</mat-dialog-actions>
+</ng-template>
